@@ -1,0 +1,22 @@
+{
+  "perceptual": {
+    "psnr": 28.058561405730813,
+    "ssim": 0.7949836195879225
+  },
+  "zk": {
+    "prover_time_real": "0:03.64",
+    "verifier_time_real": "0:01.57",
+    "proof_size_bytes": 2272,
+    "params_size_bytes": 32836
+  },
+  "notes": "LPIPS/FID pending GPU torch install",
+  "robustness": {
+    "rotation_tolerance_deg": {
+      "pass": 0.3,
+      "fail": 0.4
+    }
+  },
+  "notes_detail": [
+    "Rotation tolerance very low (~0.3\u00b0). Need rotation-invariant anchors or orientation normalization. RS redundancy helps against crop/scale/noise but not rotation."
+  ]
+}

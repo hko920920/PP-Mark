@@ -1,0 +1,38 @@
+{
+  "coco": [
+    {
+      "name": "coco_train_city_bike",
+      "raw": "raw/coco/coco_train_city_bike.jpg",
+      "processed": "processed/coco/coco_train_city_bike.png",
+      "description": "COCO train2017 #000000000009 (urban cyclists).",
+      "source_url": "https://images.cocodataset.org/train2017/000000000009.jpg",
+      "license": "COCO 2017 dataset, CC BY 4.0."
+    },
+    {
+      "name": "coco_val_street_market",
+      "raw": "raw/coco/coco_val_street_market.jpg",
+      "processed": "processed/coco/coco_val_street_market.png",
+      "description": "COCO val2017 #000000000139 (street market scene).",
+      "source_url": "https://images.cocodataset.org/val2017/000000000139.jpg",
+      "license": "COCO 2017 dataset, CC BY 4.0."
+    },
+    {
+      "name": "coco_val_beach",
+      "raw": "raw/coco/coco_val_beach.jpg",
+      "processed": "processed/coco/coco_val_beach.png",
+      "description": "COCO val2017 #000000000285 (beach / umbrellas).",
+      "source_url": "https://images.cocodataset.org/val2017/000000000285.jpg",
+      "license": "COCO 2017 dataset, CC BY 4.0."
+    }
+  ],
+  "celeba": [
+    {
+      "name": "celeba_mask_sample",
+      "raw": "raw/celeba/celeba_mask_sample.png",
+      "processed": "processed/celeba/celeba_mask_sample.png",
+      "description": "CelebAMask-HQ sample collage (high-quality face crops).",
+      "source_url": "https://raw.githubusercontent.com/switchablenorms/CelebAMask-HQ/master/images/sample.png",
+      "license": "CelebAMask-HQ sample, research use only."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "attack": "clean",
+    "success": "True",
+    "error": "",
+    "notes": ""
+  },
+  {
+    "attack": "jpeg_q50",
+    "success": "True",
+    "error": "",
+    "notes": ""
+  },
+  {
+    "attack": "gaussian_noise",
+    "success": "True",
+    "error": "",
+    "notes": ""
+  },
+  {
+    "attack": "center_crop",
+    "success": "True",
+    "error": "",
+    "notes": ""
+  },
+  {
+    "attack": "mueller_imprint_forgery",
+    "success": "False",
+    "error": "",
+    "notes": "Not executed here; requires semantic-forgery repo and GPU. Expected CPR ~ 0 per theoretical analysis."
+  }
+]
