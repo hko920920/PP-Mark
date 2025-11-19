@@ -1,4 +1,7 @@
-# PP-Mark v2.0 Architecture Notes
+# PP-Mark v2.0 Architecture Notes (Legacy)
+
+> **Note:** This document describes the PP-Mark v2.0 / `ppmark_v02` stack.  
+> For the current v2.1 architecture (semantic anchor + Stable Signature + ROBIN + ECDSA), refer to `README.md` and `docs/v21_*`.
 
 This document mirrors the verbal specification and tracks how the Python modules fulfill each requirement.  Operationally, the Typer CLI (`python -m ppmark_v02 ...` or the `ppmark-v02` console script) mirrors the three stages, while `scripts/run_full_demo.py` chains them for a quick sanity run.
 

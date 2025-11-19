@@ -1,7 +1,7 @@
 # PP-Mark v2.1 Attack Steps (ready-to-run)
 
 ## Scope / assumptions
-- Minimal metadata: `h_hex`, `C_hex`, `proof`, plus `signature = Sign(sha256(h‖C‖proof))`.
+- Minimal metadata: `h_hex`, `C_hex`, `proof`, `signature_scheme`, `signature_pubkey_hex`, plus `signature = ECDSA_P256(h‖C‖proof)`.
 - ZKP binds `h` as public input; Halo2 verify fails if meta is tampered or mismatched.
 - L2 extractor is heuristic (correlation + freq fallback); regen/Zhao defense is partial.
 - C2PA/chain anchoring optional (not baseline); treat as add-on only.

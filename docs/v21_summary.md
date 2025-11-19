@@ -17,7 +17,7 @@
 - Added: `tests/test_semantic_anchor.py`, `tests/test_prover_verifier_stub.py` (not run locally; use venv + `PYTHONPATH=src pytest -q`).
 
 ## TODO / caveats
-- Metadata integrity: signature over (h‖C‖proof) is now required; verification flow should check signature first. Blockchain/anchor (hash-only) is optional/deferred for cost/ops reasons; treat it as an add-on, not required baseline.
+- Metadata integrity: ECDSA-P256 signing over (h‖C‖proof) is implemented; metadata carries `signature_scheme` and `signature_pubkey_hex` so any verifier with the public key can confirm integrity. Blockchain/anchor (hash-only) remains optional/deferred.
 - Attack benchmarks (regen/Zhao, rotation/elastic, Müller positioning) not implemented/run; GPU + custom scripts required.
 - C2PA full JSON-LD/signing/verify chain not applied (helper only).
 - L2 extractor remains heuristic; no learned L2 or diffusers-based regen attack implemented.

@@ -1,7 +1,7 @@
 # PP-Mark v2.1 Attack Matrix Plan
 
 ## Assumptions / metadata
-- Minimal meta: `h_hex`, `C_hex`, `proof`, `signature = Sign(sha256(h‖C‖proof))` (no prompt/seed/model_id/timestamp stored). Signature required; chain anchor (hash-only) optional.
+- Minimal meta: `h_hex`, `C_hex`, `proof`, `signature_scheme`, `signature_pubkey_hex`, `signature = ECDSA_P256(h‖C‖proof)` (no prompt/seed/model_id/timestamp stored). Signature required; chain anchor (hash-only) optional.
 - Seed/nonce: prefer 256-bit random hex; short seeds only for demos.
 
 ## Scripts

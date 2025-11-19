@@ -95,6 +95,7 @@ python scripts/train_pattern.py --config artifacts/provider_setup.json \
 - `scripts/run_regen_surrogate_v21.py`: CPU 기반 Zhao surrogate
 - `scripts/run_regen_attack_v21.py`: GPU+WatermarkAttacker
 - `scripts/run_mueller_attack.py`: Müller 위조 실행기(외부 레포 필요)
+- `scripts/eval_image_quality.py`: 원본 대비 워터마크/공격 이미지를 비교(PSNR·SSIM·LPIPS)하는 품질 평가 도구
 
 ## 레거시 v0.2
 
