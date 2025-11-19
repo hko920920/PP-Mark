@@ -49,6 +49,7 @@ class ProverService:
         proof_path, public_inputs_path = self.runtime.halo2.prove(
             secret=self.runtime.secret,
             anchor=phash,
+            payload_hex=payload.hex(),
             out_dir=output_dir,
         )
         image_path = output_dir / "watermarked.png"

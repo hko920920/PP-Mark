@@ -5,3 +5,6 @@ pywavelets>=1.6
 scipy>=1.11
 typer>=0.12
 rich>=13.7
+poseidon-py>=0.1.5
+cryptography>=42
+scikit-image>=0.23

@@ -5,9 +5,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from ppmark_v02.config import ProviderConfig
-from ppmark_v02.training.configs import DataConfig, ExtractorTrainingConfig, TrainingSchedule
-from ppmark_v02.training.extractor_trainer import ExtractorTrainer
+from ppmark_v21.config import ProviderConfig
+from ppmark_v21.training.configs import DataConfig, ExtractorTrainingConfig, TrainingSchedule
+from ppmark_v21.training.extractor_trainer import ExtractorTrainer
 
 
 def parse_args() -> argparse.Namespace:

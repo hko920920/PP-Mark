@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import secrets
 from typing import Iterable
 
@@ -13,20 +12,18 @@ def generate_master_secret(num_bytes: int = 32) -> bytes:
 
 def _poseidon_hash(data: Iterable[int]) -> bytes:
     try:
-        from poseidon_py.poseidon_hash import poseidon_hash  # type: ignore
+        from poseidon_py.poseidon_hash import poseidon_hash_many  # type: ignore
+    except Exception as exc:  # pragma: no cover
+        raise RuntimeError("poseidon-py is required for Poseidon hashing.") from exc
 
-        field_elements = list(data)
-        digest = poseidon_hash(field_elements)
-        return int(digest).to_bytes(32, "big")
-    except Exception:  # pragma: no cover - falls back for CPU-only envs
-        m = hashlib.sha3_256()
-        m.update(bytes(data))
-        return m.digest()
+    field_elements = list(data)
+    digest = poseidon_hash_many(field_elements)
+    return int(digest).to_bytes(32, "big")
 
 
 def poseidon_payload(secret: bytes, anchor_hash: bytes) -> bytes:
     if not secret or not anchor_hash:
         raise ValueError("Secret and anchor hash must be non-empty.")
-    merged = secret + anchor_hash
-    int_stream = merged
-    return _poseidon_hash(int_stream)
+    secret_int = int.from_bytes(secret, "big")
+    anchor_int = int.from_bytes(anchor_hash, "big")
+    return _poseidon_hash([secret_int, anchor_int])

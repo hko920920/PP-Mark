@@ -1,0 +1,6 @@
+{
+  "h_hex": "3f9a1b2c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a",
+  "C_hex": "b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5",
+  "proof": "proof.bin",
+  "signature": "sig_over_sha256(h||C||proof)"
+}

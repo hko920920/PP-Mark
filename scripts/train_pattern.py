@@ -9,9 +9,9 @@ from typing import List
 
 import numpy as np
 
-from ppmark_v02.config import PatternConfig, ProviderConfig
-from ppmark_v02.patterns import SemanticPatternInjector
-from ppmark_v02.utils import load_image
+from ppmark_v21.config import PatternConfig, ProviderConfig
+from ppmark_v21.patterns import SemanticPatternInjector
+from ppmark_v21.utils import load_image
 
 
 def parse_args() -> argparse.Namespace:

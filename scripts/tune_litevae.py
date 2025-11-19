@@ -9,9 +9,9 @@ from typing import List
 
 import numpy as np
 
-from ppmark_v02.config import ProviderConfig
-from ppmark_v02.litevae import LiteVAE
-from ppmark_v02.utils import load_image
+from ppmark_v21.config import ProviderConfig
+from ppmark_v21.litevae import LiteVAE
+from ppmark_v21.utils import load_image
 
 
 def parse_args() -> argparse.Namespace:

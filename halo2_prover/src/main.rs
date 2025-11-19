@@ -121,6 +121,8 @@ impl Circuit<Fp> for WatermarkCircuit {
 struct CliOptions {
     secret: u64,
     anchor: u64,
+    secret_hex: Option<String>,
+    anchor_hex: Option<String>,
     prove: bool,
     k: u32,
     verify_dir: Option<PathBuf>,
@@ -129,6 +131,8 @@ struct CliOptions {
 #[derive(Serialize, Deserialize)]
 struct PublicInputsFile {
     inputs: Vec<String>,
+    anchor_hex: String,
+    poseidon_hex: String,
 }
 
 fn fp_to_hex(value: Fp) -> String {
@@ -154,6 +158,8 @@ fn parse_cli() -> CliOptions {
     let mut opts = CliOptions {
         secret: 12345,
         anchor: 6789,
+        secret_hex: None,
+        anchor_hex: None,
         prove: false,
         k: 9,
         verify_dir: None,
@@ -168,12 +174,18 @@ fn parse_cli() -> CliOptions {
                     .parse()
                     .expect("invalid secret");
             }
+            "--secret-hex" => {
+                opts.secret_hex = Some(args.next().expect("--secret-hex requires a value"));
+            }
             "--anchor" => {
                 opts.anchor = args
                     .next()
                     .expect("--anchor requires a value")
                     .parse()
                     .expect("invalid anchor");
+            }
+            "--anchor-hex" => {
+                opts.anchor_hex = Some(args.next().expect("--anchor-hex requires a value"));
             }
             "--prove" => opts.prove = true,
             "--k" => {
@@ -197,6 +209,7 @@ fn prove_and_persist(
     circuit: WatermarkCircuit,
     public: Fp,
     opts: CliOptions,
+    anchor_hex: String,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let params: Params<EqAffine> = Params::new(opts.k);
     let vk = keygen_vk(&params, &circuit)?;
@@ -236,8 +249,11 @@ fn prove_and_persist(
     let mut proof_file = File::create(out_dir.join("proof.bin"))?;
     proof_file.write_all(&proof)?;
 
+    let poseidon_hex = fp_to_hex(public);
     let public_json = PublicInputsFile {
-        inputs: vec![fp_to_hex(public)],
+        inputs: vec![poseidon_hex.clone()],
+        anchor_hex,
+        poseidon_hex,
     };
     serde_json::to_writer_pretty(
         File::create(out_dir.join("public_inputs.json"))?,
@@ -289,6 +305,16 @@ fn main() {
 
     let secret = Fp::from(opts.secret);
     let anchor = Fp::from(opts.anchor);
+    let secret = if let Some(hex) = opts.secret_hex.as_ref() {
+        fp_from_hex(hex).expect("invalid secret hex")
+    } else {
+        secret
+    };
+    let anchor = if let Some(hex) = opts.anchor_hex.as_ref() {
+        fp_from_hex(hex).expect("invalid anchor hex")
+    } else {
+        anchor
+    };
 
     let public =
         poseidon::Hash::<Fp, P128Pow5T3, ConstantLength<2>, 3, 2>::init().hash([secret, anchor]);
@@ -304,6 +330,7 @@ fn main() {
     println!("Poseidon(secret || anchor) = {:?}", public);
 
     if opts.prove {
-        prove_and_persist(circuit, public, opts).expect("proof generation failed");
+        let anchor_hex = fp_to_hex(anchor);
+        prove_and_persist(circuit, public, opts, anchor_hex).expect("proof generation failed");
     }
 }
