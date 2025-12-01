@@ -1,0 +1,30 @@
+{
+  "mueller_forgery": {
+    "status": "skipped",
+    "reason": "requires GPU environment"
+  },
+  "mueller_erasure": {
+    "status": "skipped",
+    "reason": "requires GPU environment"
+  },
+  "mueller_reprompt": {
+    "status": "skipped",
+    "reason": "requires GPU environment"
+  },
+  "zhao_regen": {
+    "status": "skipped",
+    "reason": "requires GPU environment"
+  },
+  "geometry_suite": {
+    "status": "skipped",
+    "reason": "pending implementation"
+  },
+  "image_quality": {
+    "status": "skipped",
+    "reason": "requires GPU environment, requires external toolchain"
+  },
+  "zkp_performance": {
+    "status": "skipped",
+    "reason": "pending implementation"
+  }
+}

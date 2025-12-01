@@ -1,0 +1,18 @@
+{
+  "prompt": "demo",
+  "prompt_hash": "0x2a97516c354b68848cdbd8f54a226a0a55b21ed138e207ad6c5cbb9c00aa5aea",
+  "binding": "0x4183a4ec1cc13ac286a28f3779c4ab54a1a62f6a850a3a7ecffb9938d62892b",
+  "seed_hex": "c13ff943d8f790315b3c350d6415cc546f97f3a129e91f0ec2fb213c633fdb0f",
+  "message_hex": "04183a4ec1cc13ac286a28f3779c4ab54a1a62f6a850a3a7ecffb9938d62892b",
+  "codeword_hex": "04183a4ec1cc13ac286a28f3779c4ab54a1a62f6a850a3a7ecffb9938d62892bb092c258d100f40111a04eec4a59091e34018ad0ee20555d53c9e5ae0dd37244",
+  "latent_noise": "out_demo2/latent_noise.npy",
+  "sample_trace": "out_demo2/sample_trace.bin",
+  "sample_count": 11664,
+  "sample_root": "e619e4393812c7c04718aa52a8f7ae1b2276d34512a0e7c2efef7d1a143243e7",
+  "key_info": "out_demo2/key_info.json",
+  "halo2": {
+    "public": "out_demo2/halo2/public_inputs.json",
+    "witness": "out_demo2/halo2/witness.json",
+    "proof": "out_demo2/halo2/proof.bin"
+  }
+}

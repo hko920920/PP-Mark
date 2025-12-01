@@ -1,0 +1,13 @@
+{
+  "prompt": "demo",
+  "prompt_hash": "0x2a97516c354b68848cdbd8f54a226a0a55b21ed138e207ad6c5cbb9c00aa5aea",
+  "binding": "0x1700515f499b332ec390b6ab49ab09af2fb2611cf981bf7471dacf46c9e149d",
+  "seed_hex": "76be3b4b5aa756499bf1fcc448a0ba6d90d4049dd1cbc10445815d07f569d0dd",
+  "message_hex": "01700515f499b332ec390b6ab49ab09af2fb2611cf981bf7471dacf46c9e149d",
+  "codeword_hex": "01700515f499b332ec390b6ab49ab09af2fb2611cf981bf7471dacf46c9e149db1e306e0ac85e20dbd20bea51ef42d70b1c55135561c0c04be1d95641ce32954",
+  "latent_noise": "out_demo/latent_noise.npy",
+  "sample_trace": "out_demo/sample_trace.bin",
+  "sample_count": 11664,
+  "sample_root": "78d9c0eb664bb724d7a804abf4396a3104f5f1d75fe291a04588c4751cfc76dd",
+  "key_info": "out_demo/key_info.json"
+}

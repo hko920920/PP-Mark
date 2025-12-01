@@ -1,0 +1,18 @@
+{
+  "prompt": "demo",
+  "prompt_hash": "0x2a97516c354b68848cdbd8f54a226a0a55b21ed138e207ad6c5cbb9c00aa5aea",
+  "binding": "0x3ff735c38f383c5388454444d76c795175581b248b1074b09bacdd09f4fbef8",
+  "seed_hex": "73049ba2db8965b8d942ba06f849666175435ceac744476dad593cb0661f4ee4",
+  "message_hex": "03ff735c38f383c5388454444d76c795175581b248b1074b09bacdd09f4fbef8",
+  "codeword_hex": "03ff735c38f383c5388454444d76c795175581b248b1074b09bacdd09f4fbef8cf60c166d43671375b10241f762f0a76eba4d3e8a8eac48206d2ca539b602870",
+  "latent_noise": "/mnt/c/Users/SOGANG/Downloads/ICML_materials/pp_mark_v0.3/out_demo_test_small/latent_noise.npy",
+  "sample_trace": "/mnt/c/Users/SOGANG/Downloads/ICML_materials/pp_mark_v0.3/out_demo_test_small/sample_trace.bin",
+  "sample_count": 205,
+  "sample_root": "aa45fcbe29eb9705c0c9a7beb33273f2bf759a1696e57a280159b1c731334aae",
+  "key_info": "/mnt/c/Users/SOGANG/Downloads/ICML_materials/pp_mark_v0.3/out_demo_test_small/key_info.json",
+  "halo2": {
+    "public": "/mnt/c/Users/SOGANG/Downloads/ICML_materials/pp_mark_v0.3/out_demo_test_small/halo2/public_inputs.json",
+    "witness": "/mnt/c/Users/SOGANG/Downloads/ICML_materials/pp_mark_v0.3/out_demo_test_small/halo2/witness.json",
+    "proof": "/mnt/c/Users/SOGANG/Downloads/ICML_materials/pp_mark_v0.3/out_demo_test_small/halo2/proof.bin"
+  }
+}
